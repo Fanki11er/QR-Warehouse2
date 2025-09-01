@@ -36,23 +36,27 @@ a{
 button {
     cursor: pointer;
     outline: none;
+    
+}
+html{
+    scrollbar-color: ${theme.colors.green} ${theme.colors.secondaryGray};
+    height: 100%;
 }
 
 body {
+    display: flex;
     font-family: ${theme.defaultFontFamily} ;
     color: ${theme.colors.white};
     background-color: ${theme.colors.backgroundGray};
-    scrollbar-color: ${theme.colors.green} ${theme.colors.secondaryGray};
+    //scrollbar-color: ${theme.colors.green} ${theme.colors.secondaryGray};
+    min-height: 100dvh;
 }
 
-html{
-    scrollbar-color: ${theme.colors.green} ${theme.colors.secondaryGray}
-}
 
 #root{
     display: flex ;
     flex-direction: column ;
-    min-height: 100dvh;
+    width: 100%;
 }
 
 `;

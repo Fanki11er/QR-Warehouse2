@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import MainLayout from "../Layout/MainLayout";
+import MainLayout from "../Layouts/MainLayout/MainLayout";
 import QrCodeScannerView from "../Views/QrCodeScannerView/QrCodeScannerView";
 import { editWarehousePath, qrScannerPath, warehousesPath } from "./paths";
 import WarehousesView from "../Views/WarehousesView/WarehousesView";
@@ -7,7 +7,7 @@ import Warehouse from "../components/Organisms/Warehouse";
 import AddNewWarehouseForm from "../components/Organisms/AddNewWarehouseForm/AddNewWarehouseForm";
 import WarehouseItem from "../components/Organisms/WarehouseItem/WarehouseItem";
 import MainMenuView from "../Views/MainMenuView/MainMenuView";
-import WithNavigationLayout from "../Layout/WithNavigationLayout";
+import WithNavigationLayout from "../Layouts/WithNavigationLayout";
 import EditWarehouseForm from "../components/Organisms/EditWorkhouseForm/EditWorkhouseForm";
 
 const Router = () => {
