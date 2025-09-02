@@ -1,11 +1,12 @@
 import { BasicButton } from "../../atoms/BasicButton/BasicButton.styles";
+import { AuthStatusInformationWrapper } from "./AuthStatusInformation.styles";
 
 const AuthStatusInformation = () => {
   return (
-    <div>
+    <AuthStatusInformationWrapper>
       <p>Krzysztof Dziedzic</p>
       <BasicButton>Zaloguj</BasicButton>
-    </div>
+    </AuthStatusInformationWrapper>
   );
 };
 

@@ -7,7 +7,7 @@ import Warehouse from "../components/Organisms/Warehouse";
 import AddNewWarehouseForm from "../components/Organisms/AddNewWarehouseForm/AddNewWarehouseForm";
 import WarehouseItem from "../components/Organisms/WarehouseItem/WarehouseItem";
 import MainMenuView from "../Views/MainMenuView/MainMenuView";
-import WithNavigationLayout from "../Layouts/WithNavigationLayout";
+import WithNavigationLayout from "../Layouts/WithNavigationLayout/WithNavigationLayout";
 import EditWarehouseForm from "../components/Organisms/EditWorkhouseForm/EditWorkhouseForm";
 
 const Router = () => {
