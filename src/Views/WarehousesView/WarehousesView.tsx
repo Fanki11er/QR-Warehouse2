@@ -5,6 +5,9 @@ import DesktopSideMenu from "../../components/molecules/DesktopSideMenu/DesktopS
 import SideMenuLink from "../../components/molecules/SideMenuLink/SideMenuLink";
 import { addNewWarehousePath, homePath } from "../../routes/paths";
 import WarehousesListSection from "../../components/Organisms/WarehousesListSection/WarehousesListSection";
+import { BasicButton } from "../../components/atoms/BasicButton/BasicButton.styles";
+import { importWarehouses } from "../../utilities/importWarehouses";
+import testData from "../../testData/oldDatabase.json";
 
 const WarehousesView = () => {
   return (
@@ -12,6 +15,13 @@ const WarehousesView = () => {
       <DesktopSideMenu>
         <SideMenuLink to={homePath} label="Menu" />
         <SideMenuLink to={addNewWarehousePath} label="Dodaj magazyn" />
+        <BasicButton
+          onClick={() => {
+            importWarehouses(JSON.stringify(testData));
+          }}
+        >
+          Importuj magazyny
+        </BasicButton>
       </DesktopSideMenu>
       <WarehousesListSection />
       {/* <Link to={`${warehousesPath}/1`}>Warehouse1</Link>

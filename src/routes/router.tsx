@@ -23,6 +23,9 @@ const Router = () => {
               <Route path={`:warehouseId`}>
                 <Route index element={<Warehouse />} />
                 <Route path={`:itemId`} element={<WarehouseItem />} />
+                {/*Add item */}
+                {/*Edit item */}
+                {/* Delete item */}
               </Route>
               <Route
                 path={`addNewWarehouse`}
