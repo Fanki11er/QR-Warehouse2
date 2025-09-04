@@ -1,1 +1,2 @@
 export const WAREHOUSES = "WAREHOUSES";
+export const WAREHOUSE_ITEMS = "WAREHOUSE_ITEMS";

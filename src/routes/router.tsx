@@ -1,9 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import MainLayout from "../Layouts/MainLayout/MainLayout";
 import QrCodeScannerView from "../Views/QrCodeScannerView/QrCodeScannerView";
-import { editWarehousePath, qrScannerPath, warehousesPath } from "./paths";
+import {
+  editWarehousePath,
+  qrScannerPath,
+  warehousePath,
+  warehousesPath,
+} from "./paths";
 import WarehousesView from "../Views/WarehousesView/WarehousesView";
-import Warehouse from "../components/Organisms/Warehouse";
+import Warehouse from "../components/Organisms/Warehouse/Warehouse";
 import AddNewWarehouseForm from "../components/Organisms/AddNewWarehouseForm/AddNewWarehouseForm";
 import WarehouseItem from "../components/Organisms/WarehouseItem/WarehouseItem";
 import MainMenuView from "../Views/MainMenuView/MainMenuView";
@@ -20,7 +25,7 @@ const Router = () => {
             <Route path={qrScannerPath} element={<QrCodeScannerView />} />
             <Route path={warehousesPath}>
               <Route index element={<WarehousesView />} />
-              <Route path={`:warehouseId`}>
+              <Route path={warehousePath}>
                 <Route index element={<Warehouse />} />
                 <Route path={`:itemId`} element={<WarehouseItem />} />
                 {/*Add item */}

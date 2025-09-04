@@ -1,4 +1,4 @@
-import { warehousePath } from "../../../routes/paths";
+import { warehousesPath } from "../../../routes/paths";
 import type { WarehouseDTO } from "../../../types/dtoTypes";
 import {
   WarehousesListItem,
@@ -15,7 +15,12 @@ const WarehousesList = ({ warehouses }: Props) => {
     <WarehousesListWrapper>
       {warehouses.map(({ identifier, name }) => (
         <WarehousesListItem key={identifier}>
-          <WarehousesListItemLink to={`${warehousePath}/${identifier}`}>
+          <WarehousesListItemLink
+            to={`${warehousesPath}/${identifier}`}
+            state={{
+              warehouseName: name,
+            }}
+          >
             {name}
           </WarehousesListItemLink>
         </WarehousesListItem>

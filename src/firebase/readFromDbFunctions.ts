@@ -1,6 +1,9 @@
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
-import { warehousesCollection } from "./collectionsNames";
-import type { WarehouseDTO } from "../types/dtoTypes";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
+import {
+  warehousesCollection,
+  warehousesItemsCollection,
+} from "./collectionsNames";
+import type { WarehouseDTO, WarehouseItemDTO } from "../types/dtoTypes";
 import { db } from "./configuration";
 
 export const getWarehousesList = async () => {
@@ -14,6 +17,27 @@ export const getWarehousesList = async () => {
     });
   } catch (error) {
     console.error("Error fetching warehouses:", error);
+    throw error;
+  }
+};
+
+export const getWarehouseItemsList = async (storeType: string) => {
+  try {
+    const q = query(
+      collection(db, warehousesItemsCollection),
+      where("storeType", "==", storeType),
+      orderBy("name"),
+      orderBy("mainType"),
+      orderBy("secondType")
+    );
+
+    const querySnapshot = await getDocs(q);
+
+    return querySnapshot.docs.map((doc) => {
+      return doc.data() as WarehouseItemDTO;
+    });
+  } catch (error) {
+    console.error("Error fetching warehouse items:", error);
     throw error;
   }
 };
